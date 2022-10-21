@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Buyurtmalar</title>
+    <style>
+        body {
+            background-color: black;
+        }
+
+        .order-item {
+            padding: 20px;
+            background-color: #161828;
+            color: white;
+            position: center;
+            min-width: 250px;
+            min-height: 80px;
+            width: auto;
+            height: auto;
+            border-radius: 5px;
+            margin: 10px;
+            text-align: center;
+        }
+
+        button {
+            padding: 10px;
+            background-color: red;
+            border: none;
+            border-radius: 3px;
+            color: white;
+            font-size: 22px;
+        }
+
+        .green-button {
+            padding: 10px;
+            background-color: green;
+            border: none;
+            border-radius: 3px;
+            color: white;
+            font-size: 22px;
+            margin-left: 10px;
+        }
+
+        input {
+            padding: 10px;
+            width: 90%;
+            margin-bottom: 10px;
+        }
+
+        @media only screen and (min-width: 850px) {
+            body {
+                margin-left: 33%;
+                margin-right: 33%;
+            }
+        }
+    </style>
+</head>
+<body>
+
+<section class="screen">
+    <div class="order-item">
+        <h2>Malumotlaringizni tekshirib chiqing! To'g'riligiga ishonch hosil qiling</h2>
+        <br>
+        <h2>Buyurtma haqida malumot</h2>
+        <h3>Telefon raqam: {{ order.client_phone }}</h3>
+        <h3>Manzil: {{ order.qayerdan }}</h3>
+        <h3>Odam soni: {{ order.person_count }} ta</h3>
+        <br>
+        <a href="{% url 'delete-order' order.id %}">
+            <button type="submit">Bekor qilish</button>
+        </a>
+        <a href="{% url 'right-order' order.id %}">
+            <button class="green-button" type="submit">Malumotlar to'g'ri</button>
+        </a>
+    </div>
+</section>
+
+</body>
+</html>

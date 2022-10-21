@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+{% load humanize %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Buyurtmalar</title>
+    <meta http-equiv="refresh" content="1">
+    <style>
+        * {
+            font-size: 22px;
+        }
+
+        body {
+            background-color: black;
+        }
+
+        .order-item {
+            padding: 20px;
+            background-color: #161828;
+            color: white;
+            position: center;
+            min-width: 250px;
+            min-height: 80px;
+            width: auto;
+            height: auto;
+            border-radius: 5px;
+            margin-left: 20px;
+            margin-right: 20px;
+        }
+
+        @media only screen and (min-width: 768px) {
+            body {
+                margin-left: 33%;
+                margin-right: 33%;
+            }
+        }
+    </style>
+</head>
+<body>
+
+{% block header %}{% include 'driver/header.html' %}{% endblock %}
+{% if messages %}
+    {% for message in messages %}
+        <h3 style="color: white; text-align: center;">{{ message }}</h3>
+        <br>
+    {% endfor %}
+{% endif %}
+
+<section class="screen">
+    {% if orders %}
+        {% for rs in orders %}
+            <a style="text-decoration: none;" href="{% url 'driver-order-detail' rs.id %}">
+                <div style="margin-bottom: 10px;" class="order-item" id="order-item">
+                    <h2>{{ rs.qayerdan }} => {{ rs.qayerga }}</h2>
+                    <h3>Odam soni: {{ rs.person_count }} ta</h3>
+                    <h3>Narxi: {{ rs.price|intcomma }} so'm</h3>
+                </div>
+            </a>
+        {% endfor %}
+    {% else %}
+        <div style="text-align: center;" class="order-item">
+            <h2>Xozircha buyurtmalar mavjud emas!</h2>
+        </div>
+    {% endif %}
+</section>
+
+</body>
+</html>

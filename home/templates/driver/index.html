@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta name="Description" content="Enter your description here"/>
+    <title>Well Taxi</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.1.0/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.2/css/all.min.css">
+    <link rel="stylesheet" href="{% static 'driver/style.css' %}">
+</head>
+
+<body>
+
+<section class="basic_screen">
+
+    <section class="navbar">
+        <button class="navbar_left_part_btn">
+            <i class="fa-solid fa-bars"></i>
+        </button>
+        <div id="container">
+            <div class="inner-container">
+                <div class="toggle">
+                    <p>Liniyada emas</p>
+                </div>
+                <div class="toggle">
+                    <p>Liniyada</p>
+                </div>
+            </div>
+            <div class="inner-container" id='toggle-container'>
+                <div class="toggle">
+                    <p>Liniyada emas</p>
+                </div>
+                <div class="toggle">
+                    <p>Liniyada</p>
+                </div>
+            </div>
+        </div>
+        <button class="navbar_right_part_btn">
+            <i class="fa-solid fa-phone"></i>
+        </button>
+    </section>
+
+    <section class="part_one">
+        <button class="part_one_left">
+            <i class="fa-solid fa-taxi"></i>
+            <div>
+                <h5>Well <br> Taxi</h5>
+                <i class="fa-solid fa-clock"></i>
+                <span>6:20</span>
+            </div>
+        </button>
+        <button class="part_one_right">
+            <i class="fa-solid fa-map-location-dot"></i>
+        </button>
+    </section>
+
+    <section class="part_two">
+        <button class="part_two_left">
+            <img src="https://pic.onlinewebfonts.com/svg/img_536459.png" alt="">
+        </button>
+        <button class="part_two_right">
+            <div>
+                <i class="fa-solid fa-bookmark"></i>
+                <span>3</span>
+            </div>
+            <div>
+                <i class="fa-solid fa-clock"></i>
+                <span>0</span>
+            </div>
+            <div>
+                <i class="fa-solid fa-user"></i>
+                <span>0</span>
+            </div>
+        </button>
+    </section>
+
+    <section class="part_three">
+        <button class="part_three_btn">
+            <i class="fa-solid fa-wallet"></i>
+            <span>5 360 so'm</span>
+        </button>
+    </section>
+
+    <section class="part_four">
+        <button class="part_four_btn">
+            <i class="fa-solid fa-square-parking"></i>
+            <span>не на стоянке</span>
+        </button>
+    </section>
+
+    <section class="part_five">
+        <button class="part_five_left">
+            <i class="fa-solid fa-paw"></i>
+            <div>
+                <h5>Oпции</h5>
+                <span>9</span>
+            </div>
+        </button>
+        <button class="part_five_right">
+            <i class="fa-solid fa-power-off"></i>
+        </button>
+    </section>
+</section>
+
+<script src="{% static 'driver/script.js' %}"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/2.9.2/umd/popper.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.1.0/js/bootstrap.min.js"></script>
+</body>
+
+</html>

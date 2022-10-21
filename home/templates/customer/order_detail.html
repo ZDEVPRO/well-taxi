@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Buyurtmalar</title>
+    <style>
+        body {
+            background-color: black;
+        }
+
+        .order-item {
+            padding: 20px;
+            background-color: #161828;
+            color: white;
+            position: center;
+            min-width: 250px;
+            min-height: 80px;
+            width: auto;
+            height: auto;
+            border-radius: 5px;
+            margin: 10px;
+            text-align: center;
+        }
+
+        button {
+            padding: 10px;
+            background-color: blue;
+            border: none;
+            border-radius: 3px;
+            color: white;
+            width: 100%;
+            font-size: 22px;
+        }
+
+        .redd-button {
+            padding: 10px;
+            background-color: darkred;
+            border: none;
+            border-radius: 3px;
+            color: white;
+            width: 100%;
+            font-size: 22px;
+        }
+
+        @media only screen and (min-width: 850px) {
+            body {
+                margin-left: 33%;
+                margin-right: 33%;
+            }
+        }
+    </style>
+</head>
+<body>
+
+{% block header %}{% include 'customer/header.html' %}{% endblock %}
+
+<section class="screen">
+    <a style="text-decoration: none;" href="/">
+        <div class="order-item">
+            <form method="post"> {% csrf_token %}
+                <h3>STATUS: {{ order.get_status_display }}</h3>
+                <h3>Telefon raqam: {{ order.client_phone }}</h3>
+                <h3>Manzil: {{ order.qayerdan }}</h3>
+                <h3>Odam soni: {{ order.person_count }} ta</h3>
+                <br>
+                <button class="redd-button" type="submit">Buyurtmani bekor qilish</button>
+            </form>
+        </div>
+    </a>
+</section>
+
+</body>
+</html>
